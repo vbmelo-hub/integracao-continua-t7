@@ -86,10 +86,21 @@ A aplicação vai iniciar no endereço <http://localhost:4200>.
 
 </details>
 
-<details>
+<details open>
 
 <summary>
     <h2>Ferramentas</h2>
+</summary>
+
+- **GitHub Actions (Extensão do VS Code)**
+  - <https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions>
+
+</details>
+
+<details>
+
+<summary>
+    <h3>Outras ferramentas</h3>
 </summary>
 
 - **Visual Studio Code**
