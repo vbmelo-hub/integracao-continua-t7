@@ -206,3 +206,36 @@ A demonstração de uso das ferramentas e tecnologias abordadas na capacitação
 - [Diagrama Entidade Relacionamento](https://github.com/webacademyufac/sgcmdocs#diagrama-entidade-relacionamento)
 
 </details>
+
+## Atividades práticas
+
+> [!NOTE]
+>
+> - As atividades serão realizadas com o GitHub Classroom e podem ser acessadas pelos links nas descrições das atividades.
+> - No primeiro acesso, _**cada aluno deverá selecionar seu nome na lista para vincular sua conta no GitHub**_ e aceitar o convite para a atividade prática.
+> - O repositório da atividade prática será criado automaticamente para cada aluno ou grupo (compartilhado entre os membros).
+> - O aluno deverá clonar o repositório para seu computador, fazer as modificações necessárias e subir o repositório para o GitHub (`git push`).
+> - Não é necessário nenhuma outra ação para submeter a atividade.
+> - Atividades em grupo:
+>   - Ao acessar o link da atividade, o aluno deverá criar seu grupo ou ingressar no seu respectivo grupo se existir.
+>   - O nome do grupo deve seguir o padrão: `Grupo_X`, onde `X` é o número do grupo.
+
+1. [GRUPO] Criar workflows para integração e implantação contínua para o projeto front-end utilizando o GitHub Actions.
+
+    - O workflow de integração deve compilar o projeto e executar os testes (exceto E2E).
+      - Comando para compilar o projeto: `ng build`
+      - Comando para executar os testes: `ng test --browsers=ChromeHeadless --no-watch`
+    - O workflow de implantação deve executar os testes E2E e fazer o _**deploy**_ para o ambiente de produção.
+      - Comando para executar os testes E2E: `ng run sgcmapp:cypress-run`
+      - Para executar os testes E2E, o back-end deve também estar em execução (com perfil `test`).
+        - Comandos para iniciar o back-end:
+          - `mvn clean package -Ptest -Dmaven.test.skip=true`
+          - `nohup java -jar target/sgcmapi.jar &`
+      - O _**job**_ de _**deploy**_ deve ser executado apenas se o _**job**_ do CI do front-end for executado com sucesso.
+    - **ATENÇÃO**:
+      - Para executar os comandos `ng` no GitHub Actions, é necessário configurar o Node.js e o Angular CLI no ambiente de execução, além de instalar as dependências do projeto.
+      - Configurar a constante `API_URL` no arquivo `environment.ts` do projeto front-end.
+      - Modificar as configurações de CORS no back-end para adicionar o host da aplicação front-end em produção.
+      - A implantação deve ser feita obrigatoriamente por meio do GitHub Actions.
+    - Link da atividade: <https://classroom.github.com/a/_uo3Zxu4>
+    - Entrega: 02/09/2025 - 18:00h
